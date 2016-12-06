@@ -1,0 +1,91 @@
+<form #formData="ngForm" (ngSubmit)="onSubmit(formData)">
+  <div *ngIf="employee">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-addon" id="useremail">E-mail</span>
+          <input type="text" class="form-control" placeholder="Email" aria-describedby="useremail"
+                 [(ngModel)]="email" name="email" required>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-addon" id="userpassword">Password</span>
+          <input type="text" class="form-control" placeholder="Password" aria-describedby="userpassword"
+                 [(ngModel)]="password" name="password" required>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-addon" id="firstName">Fornavn</span>
+          <input type="text" class="form-control" placeholder="Fornavn" aria-describedby="firstName"
+                 [(ngModel)]="employee.firstName" name="firstName" required>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-addon" id="lastName">Efternavn</span>
+          <input type="text" class="form-control" placeholder="Efternavn" aria-describedby="lastName"
+                 [(ngModel)]="employee.lastName" name="lastName" required>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-1 col-md-offset-1">
+        <div class="panel panel-default">
+          <div class="panel-heading">Må Administrere</div>
+          <ul class="list-group">
+            <li class="list-group-item">
+              Kasse
+              <div class="material-switch pull-right">
+                <input id="isCashAdmin" name="isCashAdmin" type="checkbox" [(ngModel)]="employee.isCashAdmin" name="isCashAdmin" />
+                <label for="isCashAdmin" class="label-primary"></label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              Brugere
+              <div class="material-switch pull-right">
+                <input id="isUserAdmin" name="isUserAdmin" type="checkbox" [(ngModel)]="employee.isUserAdmin" name="isUserAdmin" />
+                <label for="isUserAdmin" class="label-primary"></label>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-2 col-md-offset-2">
+        <div class="panel panel-default">
+          <div class="panel-heading">Medarbejder Status</div>
+          <ul class="list-group">
+            <li class="list-group-item">
+              Er pt. Ansat
+              <div class="material-switch pull-right">
+                <input id="isActive" name="isActive" type="checkbox" [(ngModel)]="employee.isActive" name="isActive" />
+                <label for="isActive" class="label-primary"></label>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+        <div class="text-center">
+          <button type="button" class="btn btn-default" style="width: 7em"
+                  type="submit">Gem
+          </button>
+          <button type="button" class="btn btn-default text-right" style="width: 7em" (click)="gotoListView()">Afbryd
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

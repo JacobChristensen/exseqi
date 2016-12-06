@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Medarbejdere</div>
+
+  <div class="list-group">
+    <div class="list-group-item" *ngFor="let emp of this.employeeService.getEmployees() | async" (click)="onSelect(emp.$key)" style="cursor: pointer">
+      {{emp.lastName}}, {{emp.firstName}} ({{emp.email}})
+    </div>
+  </div>
+</div>
+
+<button class=".btn-default" (click)="onClickNew()">Ny Medarbejder</button><br><br>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Tidligere Medarbejdere</div>
+
+  <div class="list-group">
+    <div class="list-group-item" *ngFor="let emp of this.employeeService.getInactiveEmployees() | async" (click)="onSelect(emp.$key)" style="cursor: pointer">
+      {{emp.lastName}}, {{emp.firstName}} ({{emp.email}})
+    </div>
+  </div>
+</div>
+

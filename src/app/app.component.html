@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+          <img src="../assets/Maltbazaren_logo_brun.png" style="vertical-align: middle; display: inline-block;"/>
+      </a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a [routerLink]="['/time-card']">Tids-styring</a></li>
+      <li><a [routerLink]="['/cash-transactions']">Kasse</a></li>
+      <li><a [routerLink]="['/employees']">Medarbejdere</a></li>
+      <li>{{user}}</li>
+    </ul>
+</nav>
+
+<router-outlet></router-outlet>
